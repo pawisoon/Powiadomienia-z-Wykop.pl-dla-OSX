@@ -9,7 +9,7 @@ Fast run:
 
 3.Przejdz do folderu z rozpakowanym archiwum.
 
-4.Edytuj plik i zmien pola "klucz", "sekret", "nick" i "klucz_polaczenia" tak żeby zawierały twoje dane.
+4.Edytuj plik run.py i zmien pola "klucz", "sekret", "nick" i "klucz_polaczenia" tak żeby zawierały twoje dane.
 
 5.Podaj scieżkę do rozpakowanego archiwum tak by  appIcon="sciezka/do/foleru/Powiadomienia-z-Wykop.pl-dla-OSX-master/images.jpg"
 prowadziła do pobranego folderu.
