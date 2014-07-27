@@ -20,13 +20,13 @@ class wypok:
                     if key.new ==True:
                         if key.type == "entry_comment_directed":
                             print(key.author+" dodal komentarz")
-                            Notifier.notify(key.author+"\ndodal komentarz.", title="Wykop.pl",appIcon="Desktop/Wykop/images.jpg",sound="default",open=key.url)
+                            Notifier.notify(key.author+"\ndodal komentarz.", title="Wykop.pl",appIcon="sciezka/do/foleru/Powiadomienia-z-Wykop.pl-dla-OSX-master/images.jpg",sound="default",open=key.url)
                         elif key.type=="pm":
                             print("PW od "+key.author)
-                            Notifier.notify("PW od\n"+key.author, title="Wykop.pl",appIcon="images.jpg",sound="default",open=key.url)
+                            Notifier.notify("PW od\n"+key.author, title="Wykop.pl",appIcon="sciezka/do/foleru/Powiadomienia-z-Wykop.pl-dla-OSX-master/images.jpg",sound="default",open=key.url)
                         elif key.type=="observe":
                             print("#stalkujo !"+key.author)
-                            Notifier.notify("#stalkujo !"+key.author, title="Wykop.pl",appIcon="images.jpg",sound="default",open=key.url)
+                            Notifier.notify("#stalkujo !"+key.author, title="Wykop.pl",appIcon="sciezka/do/foleru/Powiadomienia-z-Wykop.pl-dla-OSX-master/images.jpg",sound="default",open=key.url)
 
             except:
                 self._auth()
