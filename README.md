@@ -11,8 +11,13 @@ Fast run:
 
 4.Edytuj plik i zmien pola "klucz", "sekret", "nick" i "klucz_polaczenia" tak żeby zawierały twoje dane.
 
-5.Zapisz zmiany.
+5.Podaj scieżkę do rozpakowanego archiwum tak by  appIcon="sciezka/do/foleru/Powiadomienia-z-Wykop.pl-dla-OSX-master/images.jpg"
+prowadziła do pobranego folderu.
 
-6.Uruchom program komendą "python run.py".
+6.Idź do Preferencji systemowych -> Powiadomienia -> terminal-notifier -> styl komunikatu ustaw na 'Komunikaty'
 
-7.Profit.
+7.Zapisz zmiany w pliku i ustawieniach.
+
+8.Uruchom program komendą "python run.py".
+
+9.Profit.
