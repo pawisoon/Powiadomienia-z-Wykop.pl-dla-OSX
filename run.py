@@ -3,12 +3,15 @@
 import wykop , sched , time
 from time import sleep,strftime,localtime
 from pync import Notifier
-
+klucz = ""
+sekret = ""
+nick = ""
+klucz_palaczenia = ""
 
 
 class wypok:
     def __init__(self):
-        self.api = wykop.WykopAPI("klucz","sekret")
+        self.api = wykop.WykopAPI(klucz, sekret)
         self._auth()
         s=sched.scheduler(time.time,time.sleep)
 
@@ -26,7 +29,7 @@ class wypok:
                             Notifier.notify("PW od\n"+key.author, title="Wykop.pl",appIcon="sciezka/do/foleru/Powiadomienia-z-Wykop.pl-dla-OSX-master/images.jpg",sound="default",open=key.url)
                         elif key.type=="observe":
                             print("#stalkujo !"+key.author)
-                            Notifier.notify("#stalkujo !"+key.author, title="Wykop.pl",appIcon="sciezka/do/foleru/Powiadomienia-z-Wykop.pl-dla-OSX-master/images.jpg",sound="default",open=key.url)
+                            Notifier.notify("#stalkujo "+key.author, title="Wykop.pl",appIcon="sciezka/do/foleru/Powiadomienia-z-Wykop.pl-dla-OSX-master/images.jpg",sound="default",open=key.url)
 
             except:
                 self._auth()
@@ -35,7 +38,7 @@ class wypok:
         s.run()
 
     def _auth(self):
-        self.api.authenticate("nick", "klucz_połączenia")
+        self.api.authenticate(nick, klucz_palaczenia)
         print "Autoryzacja poprawna"
 
 
