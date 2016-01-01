@@ -6,7 +6,7 @@ from pync import Notifier
 klucz = ""
 sekret = ""
 nick = ""
-klucz_palaczenia = ""
+klucz_polaczenia = ""
 
 
 class wypok:
@@ -18,18 +18,19 @@ class wypok:
         def check_for_messages(sc):
             try:
                 print "Odświeżam wykop o "+strftime("%H:%M:%S",localtime())
+                Notifier.notify("Service started", title="Wykop.pl", appIcon="images.png", sound="default")
                 get_from_wypok = self.api.request("mywykop","notifications","JSON")
                 for key in get_from_wypok:
                     if key.new ==True:
                         if key.type == "entry_comment_directed":
                             print(key.author+" dodal komentarz")
-                            Notifier.notify(key.author+"\ndodal komentarz.", title="Wykop.pl",appIcon="sciezka/do/foleru/Powiadomienia-z-Wykop.pl-dla-OSX-master/images.jpg",sound="default",open=key.url)
+                            Notifier.notify(key.author+"\ndodal komentarz.", title="Wykop.pl", appIcon="images.png", sound="default", open=key.url)
                         elif key.type=="pm":
                             print("PW od "+key.author)
-                            Notifier.notify("PW od\n"+key.author, title="Wykop.pl",appIcon="sciezka/do/foleru/Powiadomienia-z-Wykop.pl-dla-OSX-master/images.jpg",sound="default",open=key.url)
+                            Notifier.notify("PW od\n"+key.author, title="Wykop.pl", appIcon="images.png", sound="default", open=key.url)
                         elif key.type=="observe":
                             print("#stalkujo !"+key.author)
-                            Notifier.notify("#stalkujo "+key.author, title="Wykop.pl",appIcon="sciezka/do/foleru/Powiadomienia-z-Wykop.pl-dla-OSX-master/images.jpg",sound="default",open=key.url)
+                            Notifier.notify("#stalkujo !"+key.author, title="Wykop.pl", appIcon="images.png", sound="default", open=key.url)
 
             except:
                 self._auth()
@@ -38,7 +39,7 @@ class wypok:
         s.run()
 
     def _auth(self):
-        self.api.authenticate(nick, klucz_palaczenia)
+        self.api.authenticate(nick, klucz_polaczenia)
         print "Autoryzacja poprawna"
 
 
